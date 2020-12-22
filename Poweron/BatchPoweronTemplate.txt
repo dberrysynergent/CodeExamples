@@ -1,0 +1,49 @@
+[ <<SPECFILE NAME>>
+
+ **************************************************
+ *   THIS CODE IS THE PROPERTY OF SYNERGENT AND   *
+ *   CANNOT BE MODIFIED OR DISTRIBUTED WITHOUT    *
+ *   CONSENT OF SYNERGENT.   COPYRIGHT <<YYYY>>       *
+ **************************************************
+
+ Created On      : <<MM/DD/YYYY>>
+ Created By      : D Berry
+ Salesforce #    : <<case #>>
+ Description     : <<description of high level program flow>>
+
+
+
+ [------------------------]
+ [------------------------]
+ [--  REVISION HISTORY  --]
+ [------------------------]
+ [------------------------]
+  
+  Modified Date :
+  Modified By   :
+  Salesforce #  :
+  Modifications :
+
+]
+
+TARGET=ACCOUNT
+
+DEFINE
+ #INCLUDE "SLIB.COMMON.DEF"
+END
+
+SETUP
+END
+
+SELECT
+END
+
+PRINT TITLE="<<report title>>" REPORTCATEGORY="FMREPORTS"
+END
+
+TOTAL
+END
+
+[******************************************************************]
+
+ #INCLUDE "SLIB.COMMON.PRO"

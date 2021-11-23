@@ -34,6 +34,7 @@ DEFINE
 END
 
 SETUP
+ CALL SLIBCOMMONSET
 END
 
 SELECT
@@ -47,4 +48,4 @@ END
 
 [******************************************************************]
 
- #INCLUDE "SLIB.COMMON.PRO"
+#INCLUDE "SLIB.COMMON.PRO"

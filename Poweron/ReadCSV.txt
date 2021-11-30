@@ -1,0 +1,73 @@
+[ <<SPECFILE NAME>>
+
+ **************************************************
+ *   THIS CODE IS THE PROPERTY OF SYNERGENT AND   *
+ *   CANNOT BE MODIFIED OR DISTRIBUTED WITHOUT    *
+ *   CONSENT OF SYNERGENT.   COPYRIGHT <<YYYY>>       *
+ **************************************************
+
+ Created On      : <<DD/MM/YYYY>>
+ Created By      : D Berry
+ Salesforce #    :
+ Description     :
+
+
+ [------------------------]
+ [------------------------]
+ [--  REVISION HISTORY  --]
+ [------------------------]
+ [------------------------]
+  
+  Modified Date :
+  Modified By   :
+  Salesforce #  :
+  Modifications :
+
+]
+
+TARGET=ACCOUNT
+
+DEFINE
+ #INCLUDE "SLIB.COMMON.DEF"
+ #INCLUDE "SLIB.REPORTCATEGORY.DEF"
+ #INCLUDE "SYN.CSVPARSER.DEF"
+ 
+END
+
+SETUP
+ #INCLUDE "SYN.CSVPARSER.SET"
+ CALL SLIBCOMMONSET
+ CALL OPENINPUTFILE
+END
+
+SELECT
+ NONE
+END
+
+PRINT TITLE="TRANSACTION POSTING" REPORTCATEGORY=SLIBRCFMREPORTS
+ WHILE (CSVERRORTEXT="")
+ DO
+  CALL CSVPARSELINE
+  PRINT CSVLINEFIELDS(0)
+  PRINT " | "
+  PRINT CSVLINEFIELDS(1)
+  NEWLINE
+ END
+END
+
+TOTAL
+END
+
+[******************************************************************]
+
+PROCEDURE OPENINPUTFILE
+ CSVFILENAME="FEEREFUND.csv"
+ CSVFILENUMBER=77
+ CSVFOLDER="LETTER"
+ CSVDELIMETERCHAR=","
+ CALL OPENCSVFILE
+ CALL INITCSVHEADERDATA
+END
+
+#INCLUDE "SLIB.COMMON.PRO"
+#INCLUDE "SYN.CSVPARSER.PRO"
